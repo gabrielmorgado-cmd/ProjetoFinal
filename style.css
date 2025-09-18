@@ -1,0 +1,554 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: white;
+    z-index: 1000;
+    transition: top 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+header.hide {
+    top: -150px; /* altura suficiente para esconder o header */
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    background-color: #e2e2e2;
+}
+
+.header-container > div{
+    padding: 10px;
+}
+
+.image {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.image > a > img {
+    width: 100px;
+}
+
+.image > a > img:hover {
+    transform: scale(1.1);
+    transition: all 0.3s ease-in-out;
+}
+
+.image > a{
+    text-decoration: none;
+}
+
+.name {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 23px;
+    color: #412625;
+}
+
+.navegation{
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 23px;
+}
+
+.navegation > nav > ul {
+    list-style: none;
+    background: #e2e2e2;
+    display: flex;
+    justify-content: space-around;
+    padding: 10px;
+}
+
+.navegation > nav > ul > li > a {
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+    padding: 10px;
+    text-decoration: none;
+    color: #412625;
+}
+
+.nav-link:hover {
+    transform: scale(1.1);
+    transition: all 0.3s ease-in-out;
+}
+
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 32px;
+    cursor: pointer;
+}
+
+@media (max-width: 426px) {
+    .header-container {
+        position: relative; /* Agora o header será o referencial do menu */
+    }
+
+    .navegation {
+        display: flex;
+        flex-direction: column;
+        justify-content: center; /* centraliza o conteúdo verticalmente */
+        align-items: center; /* melhor alinhamento do botão */
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .navegation > nav > ul {
+        display: none;
+        flex-direction: column;
+        position: absolute; /* mudamos de relative para absolute */
+        top: 100%; /* começa após o header-container */
+        right: 0;
+        width: 100vw;
+        z-index: 10;
+        margin: 0;
+        padding: 1rem 0;
+    }
+
+    .navegation.open > nav > ul {
+        display: flex;
+    }
+
+    .navegation > nav > ul > li > a {
+        justify-content: flex-start;
+        text-align: justify;
+    }
+
+    .nav-link:hover {
+        transform: scale(1);
+        transition: all 0.3s ease-in-out;
+    }
+}
+
+.home-banner {
+    position: relative;
+    width: 100%;
+    margin-top: 100px; /* espaço para o header fixo */
+}
+
+.home-banner img {
+    width: 100%;
+    display: block;
+}
+
+.banner-content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+ 
+    box-sizing: border-box;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+    padding: 0 20px; /* evita que o texto encoste nas bordas em telas pequenas */
+}
+
+.banner-content span {
+    color: white;
+    font-family: "Microsoft Yi Baiti", sans-serif;
+    font-size: 4rem;
+    text-shadow: 1px 1px 4px black;
+    margin-bottom: 15px;
+    box-sizing: border-box;
+}
+
+.banner-content button {
+    padding: 10px 20px;
+    font-size: 2rem;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    background-color: #622723;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s;
+    box-sizing: border-box;
+}
+
+.banner-content button:hover {
+    background-color: #7c322c;
+}
+
+@media (max-width: 480px) {
+    .banner-content span {
+        font-size: 1.2rem;
+    }
+
+    .banner-content button {
+        font-size: 0.9rem;
+        padding: 8px 16px;
+    }
+}
+
+.proposta {
+    padding: 10px 30px;
+    box-sizing: border-box;
+}
+
+.proposta-container{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+@media (max-width: 768px) {
+    .proposta {
+        padding: 20px;
+        box-sizing: border-box;
+    }
+
+    .proposta-container {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+.proposta-content {
+    text-align: justify;
+    padding: 0px 20px;
+    box-sizing: border-box;
+}
+
+.proposta-content > h1 {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-weight: 300;
+    font-size: 3rem;
+    color: #412625
+}
+
+.proposta-content > p {
+    text-indent: 2em;
+    font-family: "Microsoft Yi Baiti", sans-serif;
+    font-size: 28px;
+}
+
+.proposta-image > img {
+    box-sizing: border-box;
+    width: 100%;
+    height: auto;
+}
+
+.problema {
+    padding: 10px 30px;
+    box-sizing: border-box;
+}
+
+.problema-container{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.problema-content > h1 {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-weight: 300;
+    font-size: 3rem;
+    color: #412625
+}
+
+.problema-content > p {
+    text-indent: 2em;
+    font-family: "Microsoft Yi Baiti", sans-serif;
+    font-size: 28px;
+}
+
+.item {
+    font-family: "Microsoft Yi Baiti", sans-serif;
+    font-size: 28px;
+}
+
+@media (max-width: 768px) {
+    .problema {
+        padding: 20px;
+        box-sizing: border-box;
+    }
+
+    .problema-container {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+.problema-content {
+    text-align: justify;
+    padding: 0px 20px;
+    box-sizing: border-box;
+}
+
+.problema-image > img {
+    box-sizing: border-box;
+    width: 100%;
+    height: auto;
+}
+
+.solucao {
+    padding: 10px 30px;
+    box-sizing: border-box;
+}
+
+.solucao-container{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.solucao-content > h1 {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-weight: 300;
+    font-size: 3rem;
+    color: #412625
+}
+
+.solucao-content > p {
+    text-indent: 2em;
+    font-family: "Microsoft Yi Baiti", sans-serif;
+    font-size: 28px;
+}
+
+.solucao-content > a {
+    text-align: center;
+}
+
+.solucao-content > a > button {
+    padding: 10px 20px;
+    font-size: 1.5rem;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    background-color: #622723;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s;
+    box-sizing: border-box;
+}
+
+.solucao-content > a > button:hover {
+    background-color: #7c322c;
+}
+
+.solucao-content {
+    text-align: justify;
+    padding: 0px 20px;
+    box-sizing: border-box;
+}
+
+.solucao-image {
+    text-align: center;
+}
+
+.solucao-image > img {
+    box-sizing: border-box;
+    width: 90%;
+    height: auto;
+}
+
+@media (max-width: 768px) {
+    .solucao {
+        padding: 20px;
+        box-sizing: border-box;
+    }
+
+    .solucao-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .solucao-content {
+        padding: 20px;
+    }
+}
+
+.carrossel {
+    padding: 10px 30px;
+    box-sizing: border-box;
+}
+
+.carrossel-container{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+}
+
+.carrossel-content > h1 {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-weight: 300;
+    font-size: 3rem;
+    color: #412625;
+}
+
+.carrossel-content > p {
+    text-indent: 2em;
+    font-family: "Microsoft Yi Baiti", sans-serif;
+    font-size: 28px;
+}
+
+@media (max-width: 768px) {
+    .carrossel {
+        padding: 20px;
+        box-sizing: border-box;
+    }
+
+    .carrossel-container {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+.carrossel-content {
+    text-align: justify;
+    padding: 0px 20px;
+    box-sizing: border-box;
+}
+
+.carrossel-image > img {
+    box-sizing: border-box;
+    width: 100%;
+    height: auto;
+}
+
+.carrossel-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    position: relative;
+    overflow: hidden;
+    max-width: 100%;
+    align-self: center;
+}
+
+.carrossel-images {
+    display: flex;
+    gap: 20px;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    padding: 10px 0;
+}
+
+.card {
+    flex: 0 0 auto;
+    width: 200px;
+    text-align: center;
+}
+
+.card img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+}
+
+.card p {
+    margin-top: 10px;
+    font-family: "Microsoft Yi Baiti", sans-serif;
+    font-size: 18px;
+    color: #412625;
+}
+
+.carrossel-btn {
+    background-color: #412625;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 2rem;
+    border-radius: 50%;
+    z-index: 2;
+    transition: background-color 0.3s ease;
+}
+
+.carrossel-btn:hover {
+    background-color: #5c3c3c;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+    .card {
+        width: 150px;
+    }
+
+    .carrossel-btn {
+        padding: 8px;
+        font-size: 16px;
+    }
+}
+
+.sobre {
+    padding: 10px 30px;
+    box-sizing: border-box;
+}
+
+.sobre-container{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.sobre-content > h1 {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-weight: 300;
+    font-size: 3rem;
+    color: #412625;
+}
+
+.sobre-content > p {
+    text-indent: 2em;
+    font-family: "Microsoft Yi Baiti", sans-serif;
+    font-size: 28px;
+}
+
+@media (max-width: 768px) {
+    .sobre {
+        padding: 20px;
+        box-sizing: border-box;
+    }
+
+    .sobre-container {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+.sobre-content {
+    text-align: justify;
+    padding: 0px 20px;
+    box-sizing: border-box;
+}
+
+.sobre-image > img {
+    box-sizing: border-box;
+    width: 100%;
+    height: auto;
+}
+
+footer {
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #412625;
+    color: white;
+    font-family: "Microsoft Yi Baiti", sans-serif;
+    text-align: center;
+    padding: 20px;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}

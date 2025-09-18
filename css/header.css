@@ -1,0 +1,128 @@
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: white;
+    z-index: 1000;
+    transition: top 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+header.hide {
+    top: -150px; /* altura suficiente para esconder o header */
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    background-color: #f5edbc;
+}
+
+.header-container > div{
+    padding: 10px;
+}
+
+.image {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.image > a > img {
+    width: 100px;
+}
+
+.image > a > img:hover {
+    transform: scale(1.1);
+    transition: all 0.3s ease-in-out;
+}
+
+.image > a{
+    text-decoration: none;
+}
+
+.name {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 23px;
+    color: #171F25;
+}
+
+.navegation{
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 23px;
+}
+
+.navegation > nav > ul {
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+    padding: 10px;
+}
+
+.navegation > nav > ul > li > a {
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+    padding: 10px;
+    text-decoration: none;
+    color: #171F25;
+}
+
+.nav-link:hover {
+    transform: scale(1.1);
+    transition: all 0.3s ease-in-out;
+}
+
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 32px;
+    cursor: pointer;
+}
+
+@media (max-width: 426px) {
+    .header-container {
+        position: relative; /* Agora o header será o referencial do menu */
+    }
+
+    .navegation {
+        display: flex;
+        flex-direction: column;
+        justify-content: center; /* centraliza o conteúdo verticalmente */
+        align-items: center; /* melhor alinhamento do botão */
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .navegation > nav > ul {
+        display: none;
+        flex-direction: column;
+        background: #f5edbc;
+        position: absolute; /* mudamos de relative para absolute */
+        top: 100%; /* começa após o header-container */
+        right: 0;
+        width: 100vw;
+        z-index: 10;
+        margin: 0;
+        padding: 1rem 0;
+    }
+
+    .navegation.open > nav > ul {
+        display: flex;
+    }
+
+    .navegation > nav > ul > li > a {
+        justify-content: flex-start;
+        text-align: justify;
+    }
+
+    .nav-link:hover {
+        transform: scale(1);
+        transition: all 0.3s ease-in-out;
+    }
+}
