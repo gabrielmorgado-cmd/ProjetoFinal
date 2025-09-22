@@ -181,6 +181,7 @@ header.hide {
     cursor: pointer;
     transition: background 0.3s;
     box-sizing: border-box;
+    margin-top: 400px; /* 🔥 empurra o botão para baixo */
 }
 
 .banner-content button:hover {
@@ -304,10 +305,11 @@ header.hide {
     box-sizing: border-box;
 }
 
-.solucao-container{
+.solucao-container {
     display: flex;
+    flex-direction: column; /* Agora o texto fica em cima e as imagens embaixo */
     align-items: center;
-    justify-content: space-between;
+    text-align: center; /* Centraliza o texto */
 }
 
 .solucao-content > h1 {
@@ -325,6 +327,9 @@ header.hide {
 
 .solucao-content > a {
     text-align: center;
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
 }
 
 .solucao-content > a > button {
@@ -348,16 +353,21 @@ header.hide {
     text-align: justify;
     padding: 0px 20px;
     box-sizing: border-box;
+    
 }
 
 .solucao-image {
-    text-align: center;
+    margin-top: 20px;
+    display: flex;
+    flex-wrap: wrap; /* caso queira mais de uma na linha */
+    justify-content: center;
+    gap: 20px;
 }
 
-.solucao-image > img {
-    box-sizing: border-box;
-    width: 90%;
-    height: auto;
+.solucao-image img {
+    width: 80%; /* aumenta o tamanho (ajuste conforme quiser) */
+    max-width: 600px; /* garante que não fique gigante demais */
+    border-radius: 10px; /* bordas arredondadas opcionais */
 }
 
 @media (max-width: 768px) {
