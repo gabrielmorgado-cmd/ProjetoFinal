@@ -181,8 +181,7 @@ header.hide {
     cursor: pointer;
     transition: background 0.3s;
     box-sizing: border-box;
-    margin-top: 400px; /* 🔥 empurra o botão para baixo */
-}
+    }
 
 .banner-content button:hover {
     background-color: #7c322c;
@@ -232,7 +231,7 @@ header.hide {
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     font-weight: 300;
     font-size: 3rem;
-    color: #412625
+    color: #000000
 }
 
 .proposta-content > p {
@@ -262,7 +261,7 @@ header.hide {
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     font-weight: 300;
     font-size: 3rem;
-    color: #412625
+    color: #000000
 }
 
 .problema-content > p {
@@ -316,7 +315,7 @@ header.hide {
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     font-weight: 300;
     font-size: 3rem;
-    color: #412625
+    color: #000000
 }
 
 .solucao-content > p {
@@ -328,7 +327,7 @@ header.hide {
 .solucao-content > a {
     text-align: center;
     display: flex;
-    justify-content: center;
+   
     margin-top: 20px;
 }
 
@@ -336,7 +335,7 @@ header.hide {
     padding: 10px 20px;
     font-size: 1.5rem;
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-    background-color: #622723;
+    background-color: #fbbe4d;
     color: #fff;
     border: none;
     border-radius: 8px;
@@ -353,8 +352,39 @@ header.hide {
     text-align: justify;
     padding: 0px 20px;
     box-sizing: border-box;
-    
+
+    display: flex;
+    flex-direction: column;
 }
+
+/* Container que envolve os botões */
+.botoes {
+    display: flex;
+    gap: 20px; /* espaço entre os botões */
+    margin-top: 20px;
+}
+
+/* Mantém o estilo dos botões */
+.botoes a {
+    text-decoration: none;
+}
+
+.botoes a button {
+    padding: 10px 20px;
+    font-size: 1.5rem;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    background-color: #fbbe4d;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.botoes a button:hover {
+    background-color: #7c322c;
+}
+
 
 .solucao-image {
     margin-top: 20px;
@@ -515,7 +545,7 @@ header.hide {
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     font-weight: 300;
     font-size: 3rem;
-    color: #412625;
+    color: #000000;
 }
 
 .sobre-content > p {
@@ -553,12 +583,12 @@ footer {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #412625;
-    color: white;
+    background-color: #d39a2f;
+    color: rgb(0, 0, 0);
     font-family: "Microsoft Yi Baiti", sans-serif;
     text-align: center;
     padding: 20px;
     position: relative;
     bottom: 0;
-    width: 100%;
+    width: 1000%;
 }
